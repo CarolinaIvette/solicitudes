@@ -35,8 +35,6 @@ async function getById(req, res) {
 
 async function create(req, res) {
   const { title, description, area_id, category_id } = req.body
-  if (!title || !area_id) return res.status(400).json({ error: 'Título y área son requeridos' })
-
   const userId = req.session.userId
 
   try {
